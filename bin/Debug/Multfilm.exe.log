@@ -1,0 +1,39 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\Пономарёв Александр\Multfilm\bin\Debug\Multfilm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#2: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x66241F1D. Попытка прочесть данные по адресу 0x05F002CC в модуле c:\codeblocks\codeblocks\mingw\include\Windows\MgwHelp32.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdrE0, Thread: 0xEEC (Canvas). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 1 0x7548F761 in C:\Windows\System32\KERNELBASE.dll: NlsValidateLocale()
+# 2 0x6625ACA5 in c:\codeblocks\codeblocks\mingw\include\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 3 0x754998F2 in C:\Windows\System32\KERNELBASE.dll: GetNamedLocaleHashNode()
+# 4 0x75499865 in C:\Windows\System32\KERNELBASE.dll: GetNamedLocaleHashNode()
+# 5 0x66245B95 in c:\codeblocks\codeblocks\mingw\include\Windows\MgwHelp32.dll: SymGetLineFromAddrW64()
+# 6 0x754964F4 in C:\Windows\System32\KERNELBASE.dll: WideCharToMultiByte()
+# 7 0x76176BDC in C:\Windows\System32\msvcrt.dll: _crtGetStringTypeW()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2022-07-23 02:08:28 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\codeblocks\codeblocks\mingw\include\txlib.h
+Compiled:	Nov 23 2022 16:22:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Nov 23 2022 16:22:47
+
+Run file:	D:\Пономарёв Александр\Multfilm\bin\Debug\Multfilm.exe
+Directory:	D:\Пономарёв Александр\Multfilm
+
+--------------------------------------------------

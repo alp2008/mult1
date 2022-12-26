@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="main.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+</BrowseTracker_layout_file>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="asd" />
+		<Option pch_mode="2" />
+		<Option compiler="not_for_projects__mingw_gcc__strict__fast__save_requires_git" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/asd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="not_for_projects__mingw_gcc__strict__fast__save_requires_git" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/asd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="not_for_projects__mingw_gcc__strict__fast__save_requires_git" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="main.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="575" topLine="11" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
+
+<html>
+<head>
+<title>asd build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>24-11-2022 at 20:01.44</u><br />
+Build ended on: <u>24-11-2022 at 20:01.48</u><p />
+<b>-------------- Build: Debug in asd (compiler: NOT FOR PROJECTS! = MinGW GCC + Strict + Fast + Save (Requires Git))---------------</b><br />
+g++git-auto.bat "D:\проекты и другое\asd\main.cpp" -o bin\Debug\asd.exe -mwindows  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+------------------------------------------------------------------------------------------------------<br />
+Compilation ERRORS:<br />
+<br />
+D:\проекты и другое\asd\main.cpp: In function 'void drawWall()':<br />
+<font color="#0000ff">D:\проекты и другое\asd\main.cpp:4:10: warning: no previous declaration for 'void drawWall()' [-Wmissing-declarations]</font><br />
+     void drawWall()<br />
+          ^<br />
+D:\проекты и другое\asd\main.cpp: In function 'void drawFloor()':<br />
+<font color="#0000ff">D:\проекты и другое\asd\main.cpp:11:10: warning: no previous declaration for 'void drawFloor()' [-Wmissing-declarations]</font><br />
+     void drawFloor()<br />
+          ^<br />
+D:\проекты и другое\asd\main.cpp: In function 'void drawDoor()':<br />
+<font color="#0000ff">D:\проекты и другое\asd\main.cpp:18:10: warning: no previous declaration for 'void drawDoor()' [-Wmissing-declarations]</font><br />
+     void drawDoor()<br />
+          ^<br />
+D:\проекты и другое\asd\main.cpp: In function 'void drawClock()':<br />
+<font color="#0000ff">D:\проекты и другое\asd\main.cpp:25:10: warning: no previous declaration for 'void drawClock()' [-Wmissing-declarations]</font><br />
+     void drawClock()<br />
+          ^<br />
+------------------------------------------------------------------------------------------------------<br />
+Autosaving to the Git repository in D:/  /asd/.git-auto/... <br />
+Output size is 2,24 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 4 seconds)</font><br />
+<font color="#0000ff">0 errors, 4 warnings (0 minutes, 4 seconds)</font><br />
+</tt>
+</body>
+</html>
+
+#include "TXLib.h"
+
+
+    void drawWall()
+    {
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BROWN);
+    txRectangle (0,0,1200,600);
+    }
+
+    void drawFloor()
+    {
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BROWN);
+    txRectangle (0,600,1200,800);
+    }
+
+    void drawDoor()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_ORANGE);
+    txRectangle (900,220,1000,600);
+    txLine(990,450,970,450);
+    }
+    void drawClock()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_WHITE);
+    txCircle(620,120,45);
+    txLine(590,120,620,120);
+    txLine(620,120,620,100);
+    }
+
+    void drawWindow()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_CYAN);
+    txRectangle (470,385,200,200);
+    txLine(330,200,330,385);
+    txLine(470,290,200,290);
+    }
+    void drawChair()
+    {
+    txLine(350,655,350,420);
+    txLine(370,640,370,540);
+    txLine(440,540,440,650);
+    txLine(370,510,370,390);
+    txLine(460,510,460,630);
+    txSetFillColor(TX_ORANGE);
+    POINT chair1[4]{{350,420}, {370,390}, {370,510}, {350,540}};
+    txPolygon(chair1, 4);
+    POINT chair2[4]{{350,540}, {440,540}, {460,510}, {370,510}};
+    txPolygon(chair2, 4);
+    }
+
+    void drawTable()
+    {
+    txLine(470,660,470,500);
+    txLine(530,500,530,600);
+    txLine(670,660,670,500);
+    txLine(720,600,720,440);
+    POINT table1[8]{{470,470}, {470,500}, {670,500}, {720,440}, {720,410}, {670,470}, {470,470}, {530,470}};
+    txPolygon(table1, 8);
+    txLine(670,500,670,470);
+    POINT table2[4]{{720,410}, {670,470}, {470,470}, {530,410}};
+    txPolygon(table2, 4);
+    }
+   void drawSpoon()
+   {
+   txSetColor(TX_GREY,5);
+   txSetFillColor(TX_GREY);
+   txLine(510,450,530,450);
+   txCircle(535,450,5);
+   }
+    void drawPLate()
+    {
+    txCircle(540,430,10);
+    }
+
+    void drawKey()
+    {
+    txSetFillColor(TX_BROWN);
+    txSetColor(TX_BLACK,3);
+    txCircle(550,630,5);
+    txLine(550,630,580,630);
+    txLine(580,630,580,635);
+    txLine(575,630,575,633);
+    }
+int main()
+    {
+    txCreateWindow (1200, 800);
+    txBegin();
+    drawWall();
+    drawFloor();
+    drawDoor();
+    drawClock();
+    drawWindow();
+    drawChair();
+    drawTable();
+    drawSpoon();
+    drawPLate();
+    drawKey();
+    txTextCursor (false);
+    return 0;
+    }
+
+#include "TXLib.h"
+
+
+    void drawWall()
+    {
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BROWN);
+    txRectangle (0,0,1200,600);
+    }
+
+    void drawFloor()
+    {
+    txSetColor(TX_BLACK);
+    txSetFillColor(TX_BROWN);
+    txRectangle (0,600,1200,800);
+    }
+
+    void drawDoor()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_ORANGE);
+    txRectangle (900,220,1000,600);
+    txLine(990,450,970,450);
+    }
+    void drawClock()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_WHITE);
+    txCircle(620,120,45);
+    txLine(590,120,620,120);
+    txLine(620,120,620,100);
+    }
+
+    void drawWindow()
+    {
+    txSetColor(TX_BLACK,5);
+    txSetFillColor(TX_CYAN);
+    txRectangle (470,385,200,200);
+    txLine(330,200,330,385);
+    txLine(470,290,200,290);
+    }
+    void drawChair()
+    {
+    txLine(350,655,350,420);
+    txLine(370,640,370,540);
+    txLine(440,540,440,650);
+    txLine(370,510,370,390);
+    txLine(460,510,460,630);
+    txSetFillColor(TX_ORANGE);
+    POINT chair1[4]{{350,420}, {370,390}, {370,510}, {350,540}};
+    txPolygon(chair1, 4);
+    POINT chair2[4]{{350,540}, {440,540}, {460,510}, {370,510}};
+    txPolygon(chair2, 4);
+    }
+
+    void drawTable()
+    {
+    txLine(470,660,470,500);
+    txLine(530,500,530,600);
+    txLine(670,660,670,500);
+    txLine(720,600,720,440);
+    POINT table1[8]{{470,470}, {470,500}, {670,500}, {720,440}, {720,410}, {670,470}, {470,470}, {530,470}};
+    txPolygon(table1, 8);
+    txLine(670,500,670,470);
+    POINT table2[4]{{720,410}, {670,470}, {470,470}, {530,410}};
+    txPolygon(table2, 4);
+    }
+   void drawSpoon()
+   {
+   txSetColor(TX_GREY,5);
+   txSetFillColor(TX_GREY);
+   txLine(510,450,530,450);
+   txCircle(535,450,5);
+   }
+    void drawPLate()
+    {
+    txCircle(540,430,10);
+    }
+    
+    void drawKey()
+    {
+    txSetFillColor(TX_BROWN);
+    txLine(550,630,580,630);
+    txLine(580,630,580,635);
+    txLine(575,630,575,635);
+    }
+int main()
+    {
+    txCreateWindow (1200, 800);
+    txBegin();
+    drawWall();
+    drawFloor();
+    drawDoor();
+    drawClock();
+    drawWindow();
+    drawChair();
+    drawTable();
+    drawSpoon();
+    drawPLate();
+    txTextCursor (false);
+    return 0;
+    }
