@@ -49,16 +49,16 @@ POINT start[3]{{750,330}, {1190,330}, {970,200}};
 txPolygon (start, 3);
 }
 
-void drawMan(int x,int y,float razm)
+void drawMan(int x,int y,float razm,int z)
 {
-   //человек X=570   y=365
+   //человек X=570   y=365  z=75
     txSetFillColor(TX_BLACK);
     txSetColor(TX_BLACK, 5);
     txCircle(x,y,15*razm);
     txLine  (x+30*razm,y+195*razm,x,y+85*razm);
     txLine  (x-30*razm,y+195*razm,x,y+85*razm);
     txLine  (x,y+85*razm,x,y+15*razm);
-    txLine  (x+40*razm,y+75*razm,x,y+15*razm);
+    txLine  (x+40*razm,y+z*razm,x,y+15*razm);
     txLine  (x-40*razm,y+75*razm,x,y+15*razm);
 }
 
@@ -243,8 +243,15 @@ void drawEnd(int x, int y)
 {
     txSetColor(TX_WHITE);
     txSetFillColor(TX_BLACK);
-    txSelectFont("Calibri", 60);
-    txDrawText(x-1200,y-800,x,y,"Конец");
+    txSelectFont("Calibri", 50);
+    txDrawText(x-1200,y-800,x,y,"Конец\n\n\n"
+                            "в главных ролях\n\n"
+                        "The Stickman\n"
+                        "Райан Гослинг\n\n"
+                        "спонсор\n\n"
+                        "Моя мама\n\n"
+                        "Режисер\n\n"
+                    "Александр Пономарёв");
 }
 
 void drawLand3()
@@ -285,23 +292,44 @@ void drawShip()
     POINT shipSgr[4] = {{690,500}, {610,470}, {610,490}, {670,500}};
     txPolygon(shipSgr, 4);
 }
-void shipGround()
+void drawShipGround()
     {
-    txSetColor(TX_BLUE);
-    txSetFillColor(TX_BLUE);
-    txRectangle(0,0,1200,130);
     txSetColor(TX_BLACK, 5);
     txSetFillColor(TX_GREY);
-    txRectangle(0,130,1200,500);
+    txRectangle(0,500,150,800);
     txRectangle(0,130,1200,500);
     txRectangle(150,500,380,800);
     txRectangle(380,500,600,800);
     txRectangle(600,500,810,800);
     txRectangle(800,500,1000,800);
-    txRectangle(100,500,1200,800);
+    txRectangle(1000,500,1200,800);
     txSetColor(TX_YELLOW);
     txSetFillColor(TX_YELLOW);
     txCircle(1200,0,20);
+    txSetColor(TX_BLACK, 5);
+    txSetFillColor(TX_GREY);
+    txRectangle(200,500,320,220);
+    txLine(300,410,280,420);
+    txSetColor(TX_BLACK, 5);
+    txSetFillColor(TX_DARKGREY);
+    txRectangle(700,340,1050,250);
+    txLine(880,250,880,338);
+    txLine(700,290,1049,290);
+    POINT Tablee[4] = {{860,530}, {910,400}, {1180,400}, {1140,530}};
+    txPolygon(Tablee, 4);
+    txLine(860,630,860,530);
+    txLine(900,570,900,530);
+    txLine(1140,530,1140,620);
+    txLine(1180,400,1180,570);
+    }
+    void drawChest()
+    {
+    txSetColor(TX_YELLOW, 5);
+    txSetFillColor(TX_ORANGE);
+    txEllipse(950,410,1110,450);
+    txRectangle(1110,430,950,490);
+    txLine(1030,410,1030,490);
+    txEllipse(1020,415,1040,450);
     }
 
 int main()
@@ -312,6 +340,7 @@ txCreateWindow (1200, 800);
     int xMan = 570;
     int ySun = 80;
     int yMan = 365;
+    int zMan =75;
     int xCar = 160;
     int yCar = 480;
     int xSpoon=535;
@@ -322,7 +351,7 @@ txCreateWindow (1200, 800);
     float razmKey = 1;
     int xStart=1200;
     int yStart=800;
-    int yEnd=800;
+    int yEnd=1800;
     int xEnd=1200;
 
     while(yStart > 400)
@@ -345,7 +374,7 @@ txCreateWindow (1200, 800);
             drawWood (x,500);
         }
         drawHouse();
-        drawMan(xMan,yMan,razmMan);
+        drawMan(xMan,yMan,razmMan,zMan);
         drawCar(xCar,yCar);
         xMan+=5;
         txEnd();
@@ -366,7 +395,7 @@ txCreateWindow (1200, 800);
     xMan-=10;
     drawPLate();
     drawKey(xKey,yKey,1);
-    drawMan(xMan,yMan,1.5);
+    drawMan(xMan,yMan,1.5,zMan);
     txEnd();
     txSleep(10);
     }
@@ -385,7 +414,7 @@ txCreateWindow (1200, 800);
     ySpoon+=7;
     drawPLate();
     drawKey(xKey,yKey,1);
-    drawMan(xMan,yMan,1.5);
+    drawMan(xMan,yMan,1.5,zMan);
     txEnd();
     txSleep(10);
     }
@@ -404,7 +433,7 @@ txCreateWindow (1200, 800);
     drawChair();
     drawPLate();
     drawKey(xKey,yKey,1);
-    drawMan(xMan,yMan,1.5);
+    drawMan(xMan,yMan,1.5,zMan);
     txEnd();
     yMan+=10;
     txSleep(10);
@@ -424,7 +453,7 @@ txCreateWindow (1200, 800);
     drawPLate();
     drawKey(xKey,yKey,1);
     yKey-=3;
-    drawMan(xMan,yMan,1.5);
+    drawMan(xMan,yMan,1.5,zMan);
     txEnd();
     txSleep(10);
     }
@@ -443,7 +472,7 @@ txCreateWindow (1200, 800);
     drawChair();
     drawPLate();
     drawKey(xKey,yKey,1);
-    drawMan(xMan,yMan,1.5);
+    drawMan(xMan,yMan,1.5,zMan);
     txEnd();
     xMan+=5;
     yMan-=1;
@@ -462,7 +491,7 @@ txCreateWindow (1200, 800);
             drawWood (x,500);
         }
         drawHouse();
-        drawMan(xMan,yMan,razmMan);
+        drawMan(xMan,yMan,razmMan,zMan);
         drawKey(xKey,yKey,0.5);
         drawCar(xCar,yCar);
         yKey=480;
@@ -483,7 +512,7 @@ txCreateWindow (1200, 800);
         }
         drawHouse();
         drawCar(xCar,yCar);
-        drawMan(xMan,yMan,razmMan);
+        drawMan(xMan,yMan,razmMan,zMan);
         drawKey(xKey,yKey,0.5);
         xMan-=6;
         xKey-=6;
@@ -542,26 +571,89 @@ txCreateWindow (1200, 800);
         txSleep(2);
 
     }
-    while(xMan > 200)
     {
-    txBegin();
     drawSky(TX_BLUE);
     drawLand3();
     drawShip();
     xMan=1200;
     yMan=400;
-    drawMan(xMan,yMan,0.5);
-    xMan-=2;
-    txEnd();
+    drawMan(xMan,yMan,0.5,zMan);
+    drawKey(xKey,yKey,0.25);
+    xKey=1220;
+    yKey=440;
     txSleep(100);
     }
+    while(xMan > 700)
+    {
+    txBegin();
+    drawSky(TX_BLUE);
+    drawLand3();
+    drawShip();
+    drawMan(xMan,yMan,0.5,zMan);
+    drawKey(xKey,yKey,0.25);
+    xMan-=2;
+    xKey-=2;
+    txEnd();
+    txSleep(20);
+    }
+    while(xMan > 620)
+    {
+    txBegin();
+    drawSky(TX_BLUE);
+    drawLand3();
+    drawShip();
+    drawMan(xMan,yMan,0.5,zMan);
+    drawKey(xKey,yKey,0.25);
+    xMan-=2;
+    xKey-=2;
+    yMan-=1;
+    yKey-=1;
+    txEnd();
+    txSleep(20);
+    }
 
-    while(yEnd < 2400)
+    {
+    drawSky(TX_BLUE);
+    drawShipGround();
+    drawChest();
+    drawMan(xMan,yMan,1.5,zMan);
+    yKey=470;
+    xKey=680;
+    drawKey(xKey,yKey,1);
+    txSleep(1000);
+    }
+
+    while(xMan  < 960)
+    {
+    txBegin();
+    drawSky(TX_BLUE);
+    drawShipGround();
+    drawChest();
+    drawMan(xMan,yMan,1.5,zMan);
+    xMan+=3;
+    xKey+=3;
+    drawKey(xKey,yKey,1);
+    txSleep(10);
+    }
+    while(zMan  > 35)
+    {
+    txBegin();
+    drawSky(TX_BLUE);
+    drawShipGround();
+    drawChest();
+    drawMan(xMan,yMan,1.5,zMan);
+    zMan-=3;
+    yKey-=4;
+    drawKey(xKey,yKey,1);
+    txSleep(10);
+    }
+
+    while(yEnd > -2400)
     {
     txBegin();
     drawSky(TX_BLACK);
     drawEnd(xEnd, yEnd);
-    yEnd+=5;
+    yEnd-=5;
     txEnd();
     txSleep(10);
     }
